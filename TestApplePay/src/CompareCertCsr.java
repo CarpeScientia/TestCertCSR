@@ -22,8 +22,13 @@ import org.bouncycastle.util.io.pem.PemWriter;
 public class CompareCertCsr{
 
     public static void main(String[] args) throws Exception{
+	if( args.length == 1){
+	    System.out.println("Reading Certificate\n");
+	    main2(args);
+	    return;
+	}
 	if(args.length != 2){
-	    System.out.println("Need the Certificate en CSR files\n");
+	    System.out.println("Need the Certificate and/or CSR files\n");
 	    return;
 	}
 
